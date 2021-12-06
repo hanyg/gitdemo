@@ -1,0 +1,58 @@
+extends: default
+role:
+  love:
+    font-color: E0245E
+  red:
+    font_color: #ff0000
+  green:
+    font_color: #00ff00
+  wild:
+    font-color: 222222
+    text-transform: uppercase
+    font-style: italic
+    background-color: BCD637
+    border-offset: 1.5
+page:
+  background-color: #ffffff
+header:
+  background-color: 0
+  font_color: FFFFFF
+  height: 0.35in
+  recto:
+    columns: "<30% =40% >30%"
+    right:
+      content: '_{organization}_'
+    left:
+      content:  'CBSA - ASFC'
+    center:
+      content:  'Enterprise Strategic Roadmap'
+  verso:
+    columns: "<30% =40% >30%"
+    right:
+      content: '_{organization}_'
+    left:
+      content:  'CBSA - ASFC'
+    center:
+      content:  'Enterprise Strategic Roadmap'
+footer:
+  background-color: 0
+  font_color: FFFFFF
+  height: 0.35in
+  recto:
+    right:
+      content: '{section-or-chapter-title} | {page-number}'
+  verso:
+    left:
+      content: '{page-number} | {section-or-chapter-title}'
+title-page:
+  background-color: #333333
+  background_image: image:../images/background.png[]
+  align: left
+  title:
+    font-color: #999999
+  subtitle:
+    font-color: #999999    
+  logo:
+    align: left
+    image: image:../images/cbsa.png[pdfwidth=25%]
+  
