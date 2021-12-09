@@ -382,7 +382,7 @@ Business Process Flows, (*BPF*), are used to define a set of steps for customer 
 .Business Process Flows
 image::resources/images/bp.png[Business Process Flows,500,500,align='center']
 
-The [red]#_red arrows_# point to the _stages_ of the Business Process Flow. Each stage presents a view of precisely what must be completed at this point of the *LOB* process. For example, when a service ticket is being closed, a mandatory field _must_ be filled indicating the service tickets final status. This field would _not_ be visible in the previous stages since it does not comply with the *LOB* procedures. At any point of the process only one stage is active and is [green]#highlighted#. This makes it simpler for customer service agents to follow and comply with the *LOB* procedures and reduces training requirements, minimizes errors and increases efficiency.
+The _red arrows_ point to the _stages_ of the Business Process Flow. Each stage presents a view of precisely what must be completed at this point of the *LOB* process. For example, when a service ticket is being closed, a mandatory field _must_ be filled indicating the service tickets final status. This field would _not_ be visible in the previous stages since it does not comply with the *LOB* procedures. At any point of the process only one stage is active and is _highlighted_. This makes it simpler for customer service agents to follow and comply with the *LOB* procedures and reduces training requirements, minimizes errors and increases efficiency.
 
 <<<
 [[activities]]
@@ -857,7 +857,7 @@ The roadmap prioritization sequence allows for a refinement step of the security
 
 |ATT|Active Team Template|
 
-* An Active Team Template makes it possible to create _ad-hoc_ security teams which can be used to restrict specific records.
+* An Active Team Template makes it possible to create _ad-hoc_ security teams which can be used to restrict specific records. ATT can be associated with contacts, accounts or cases.
 
 
 |API|Application Programming Interface|
@@ -883,6 +883,11 @@ The roadmap prioritization sequence allows for a refinement step of the security
 * Whereas a _bot_ is a type of computer program designed to perform basic tasks, a _subtype_ of a bot, the _chatbot_, specializes in interacting via chat or dialog and typically used over the internet. A chatbot is not an abbreviation.
 
 
+|CSM|Core Service Module|
+
+* The set of features of the CSM, the foundational layer, which each Call Centre *LOB* uses to assess the structural and behavioural differences, in order to determine the customizations required.
+
+
 
 |ESR|Enterprise Strategic Roadmap|
 
@@ -892,12 +897,19 @@ The roadmap prioritization sequence allows for a refinement step of the security
 
 * A document or list of common questions along with their answers that are frequently asked. Rather than having the customer call in or inquire about an issue or service, the FAQ document may provide the information as part of a self-service feature. The FAQ document may be part of the KM repository.
 
+
+
+
+|Term|Explanation|Description
+
+
 |KM|Knowledge Management|
 
 * In the context of service support, a Knowledge Management facility provides a collection of tools to manage the creation, updating and access to knowledge related materials such as, *FAQ* documents, self-service resources, forms and so forth. 
 
+|KPI|Key Performance Indicators|
 
-|Term|Explanation|Description
+* KPI are the metrics associated with how the *LOB* is achieving it's objectives. Metrics associated with a Call Centre may include how many cases were serviced during a specific period, the average response time between when a case was opened and resolved and much more. Key Performance Indicators can also be rolled up and viewed as a whole, such as the Agency's KPI.
 
 |LOB|Lines of Business|
 
@@ -919,5 +931,46 @@ The roadmap prioritization sequence allows for a refinement step of the security
 |SLA|Service-Level Agreement|
 
 * A Service-Level Agreement (*SLA*) defines the level of service expected by a customer from organization, with the contract specifying the metrics by which that service is measured.
+
+
+|SME|Subject Matter Expert|
+
+* A Subject Matter Expert (*SME*) is a person with a deep understanding of a particular area or topic. In the context of the *ESR*, the *SME*  would be the person with a deep understand of the Call Centre *LOB* being on boarded to the desired state.
+
+|===
+
+<<<
+
+== List of References
+
+The following references were used in the preparation of the *ESR*
+
+.References
+[cols="30%,70%a"]
+|===
+
+|Description|Link
+
+|Agency Call Centre Review|http://apollo.omega.dce-eir.net/livelink/llisapi.dll/Overview/73710115
+
+|Client Onboarding (Wireframe)| http://apollo.omega.dce-eir.net/livelink/llisapi.dll/55960599/TCCU_-_Client_Onboarding.png?func=doc.Fetch&nodeid=55960599
+
+|Contact Centre as a service|TODO
+
+|GCCase Functional Architecture|http://apollo.omega.dce-eir.net/livelink/llisapi.dll?func=ll&objaction=overview&objid=34941358
+ 
+|GCCase Technology Architecture Description (*TAD*)|http://apollo.omega.dce-eir.net/livelink/llisapi.dll?func=ll&objaction=overview&objid=34941357
+
+|Production Support Data Elements|http://apollo.omega.dce-eir.net/livelink/llisapi.dll?func=ll&objaction=overview&objid=56499922
+
+|Production Support Change Requests|http://apollo.omega.dce-eir.net/livelink/llisapi.dll?func=ll&objaction=overview&objid=56562895
+ 
+|Select Client Type (Wireframe)|http://apollo.omega.dce-eir.net/livelink/llisapi.dll/55957304/TCCU_Select_Client_Type.png?func=doc.Fetch&nodeid=55957304
+ 
+|TCCU Application Log - An example of extracting information for basic reporting|http://apollo.omega.dce-eir.net/livelink/llisapi.dll?func=ll&objaction=overview&objid=56249544
+
+|TCCU Testing Status Report|http://apollo.omega.dce-eir.net/livelink/llisapi.dll?func=ll&objaction=overview&objid=56251667
+ 
+|TCCU Prod Support Functionality Requests With Comments|http://apollo.omega.dce-eir.net/livelink/llisapi.dll?func=ll&objaction=overview&objid=56307242
 
 |===
