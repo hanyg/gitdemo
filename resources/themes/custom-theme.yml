@@ -6,6 +6,8 @@ role:
     font_color: #ff0000
   green:
     font_color: #00ff00
+  blue:
+    font_color: #0000ff
   wild:
     font-color: 222222
     text-transform: uppercase
@@ -14,6 +16,8 @@ role:
     border-offset: 1.5
 page:
   background-color: #ffffff
+outline_list:
+  item_spacing: 1
 header:
   background-color: 0
   font_color: FFFFFF
@@ -23,17 +27,17 @@ header:
     right:
       content: '_{organization}_'
     left:
-      content:  'CBSA - ASFC'
+      content:  'DXC'
     center:
-      content:  'Enterprise Strategic Roadmap'
+      content:  'git / Dynamics 365'
   verso:
     columns: "<30% =40% >30%"
     right:
       content: '_{organization}_'
     left:
-      content:  'CBSA - ASFC'
+      content:  'DXC'
     center:
-      content:  'Enterprise Strategic Roadmap'
+      content:  'git / Dynamics 365'
 footer:
   background-color: 0
   font_color: FFFFFF
@@ -54,5 +58,5 @@ title-page:
     font-color: #999999    
   logo:
     align: left
-    image: image:../images/cbsa.png[pdfwidth=25%]
+    image: image:../images/dxc_logo.png[pdfwidth=25%]
   
