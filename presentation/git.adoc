@@ -288,3 +288,7 @@ image::resources/images/feature-branch.png[git,200,400,align='center']
 --
 
 == Pull Request
+
+* Pull requests are used to control updates to the main branches.
+* The developer should never directly push to the *origin/develop* or *origin/master* branches.
+* The developer creates a *Pull Request* that can be reviewed and *Approved* or *Rejected*
