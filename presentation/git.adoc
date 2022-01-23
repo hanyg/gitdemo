@@ -1,4 +1,4 @@
-= Enterprise Strategic Roadmap
+= git / D365
 :revealjs_theme: black
 :customcss: resources/css/theme.css
 :source-highlighter: highlight.js
@@ -11,9 +11,9 @@
 :revealjs_controlsLayout: bottom-right
 :revealjs_transition: slide
 :revealjs_parallaxBackgroundImage: http://localhost:5000/resources/images/bg.png
-:Author:    Hany Greiss <Hany.Greiss@cbsa-asfc.gc.ca>
-:Email:     Hany.Greiss@cbsa-asfc.gc.ca
-:revdate:   11/30/2021
+:Author:    Hany Greiss <Hany.Greiss@dxc.com>
+:Email:     Hany.Greiss@dxc.com
+:revdate:   01/24/2022
 :revnumber: 1.0
 :revremark: DRAFT
 :revealjsdir: ./reveal.js
@@ -29,16 +29,16 @@ _Detailed Overview_
 
 ++++
 
-<div id="cbsa-header" class="header">
-     <span class="element"></span>
-     <span class="element"><img src="/resources/images/cbsa.png" width="200" /></span>
+<div id="dxc-header" class="header">
+     <span class="element">DXC</span>
+     <span class="element">git / D365</span>
      <span class="element"></span>
  </div>
  
 
-<div id="cbsa-footer" class="footer">
-     <span class="element">CBSA-ASFC</span>
-     <span class="element">Enterprise Strategic Roadmap</span>
+<div id="dxc-footer" class="footer">
+     <span class="element"></span>
+     <span class="element"></span>
      <span class="element"></span>
  </div>
  
@@ -48,8 +48,8 @@ _Detailed Overview_
  <script type="text/javascript">
       window.addEventListener("load", function() {     
           revealDiv = document.querySelector("body div.reveal")
-          header = document.getElementById("cbsa-header");
-          footer = document.getElementById("cbsa-footer");
+          header = document.getElementById("dxc-header");
+          footer = document.getElementById("dxc-footer");
           revealDiv.appendChild(header);
           revealDiv.appendChild(footer);
       });
@@ -63,38 +63,10 @@ _Detailed Overview_
 
 
 
-[.columns]
+
 == Agenda
 
-[.column]
-[%step]
-* Executive Summary
-* Purpose
-* Roadmap Outline
-[%step]
-** Current State
-** Desired State
-** Gap Analysis
-** Activities
-** Prioritize Sequence
-
-[.column]
-[%step]
-* Desired State
-[%step]
-** Business Units
-** Contacts, Accounts
-** Cases
-*** Case Creation
-*** Business Process Flows
-** Activities
-
-[.column]
-[%step]
-* Gap Analysis
-* Activities
-* Prioritize Sequence
-* Q & A
+* git Overview
 
 [.notes]
 --
@@ -103,15 +75,28 @@ _Detailed Overview_
 --
 
 
-== Executive Summary
+== git
 
-The *ESR*, is a strategic blueprint:
 
-* a guide for implementing a _digital transformation_
-** improve the *_Customer Experience_*
-** align the *LOB*
-** enhance reporting
-* Agency change management plan;
+[cols="65%a,5%,30%a",frame="none",grid="none"]
+|===
+|||
+
+|
+* Distributed version control software
+* Different in the sense that there is no _central_ repository
+** Each instance is a repository – _including_ each developers
+** However, we typically pick one of the instances to be the _central_ repository.
+* Branching and merging are extremely efficient
+** Historically not the case with many other version control systems, e.g. Subversion
+
+||
+[#img-git-central]
+.git Model
+image::resources/images/central.png[git,550,400,align='center']
+
+|===
+
 
 [.notes]
 --
@@ -119,54 +104,36 @@ The *ESR*, is a strategic blueprint:
 --
 
 
+== git Workflow
 
-[.columns]
-== Purpose
+* A version control workflow is a process that contributors follow.
+** Contributors consist of anyone using the repository including the developers, the business analysts, the project management team. Anyone reading, updating or creating new content from or to the repository.
+* Having a workflow provides a clear process that maximizes the benefits of using version control. It also improves efficiency.
+* There are a number of different workflows teams are following. No single workflow is the _best_. 
+* Workflows can be adapted to suit the particulars of the project and the environment, e.g. Dynamics 365 development.
 
-[.column]
-[%step]
-* *ESR* is:  
-[%step]
-** planning tool
-** _visual roadmap_
-* Stakeholders Buy-In
-[%step]
-** _Big Picture_.
-** Conveys the transformation
-** improves the _Customer Experience_.
-** Depicts how productivity will improve.
+== Proposed Workflow
 
-[.column]
-[%step]
-* Sharing Details
-[%step]
-** Multiple views
-*** Strategic thinkers.
-*** Tactical implementers.
-** Timelines of the transformation.
-* Prioritize Activities
-[%step]
-** Planning 
 
-[.notes]
---
+[cols="65%a,5%,30%a",frame="none",grid="none"]
+|===
+|||
 
---
+|
+* Based on two infinite branches
+** _master_ and _develop_
+* The designated _central_ repository is referred to as _origin_
+** Recall that from the git perspective there is no central concept. But in practice we designate one as origin.
+* The _origin_ is different in that there is never a working copy. 
+** It is primarily used for _push_ and _pull_ requests.
 
-[.columns]
-=== Roadmap Outline
+||
+[#img-git-model]
+.git Model
+image::resources/images/git-model.png[git,550,400,align='center']
 
-[.column]
-[%step]
-* Current State
-* Desired State
-* Gap Analysis
-* Analysis
-* Prioritize Sequence
+|===
 
-[.column]
-[%step]
-image::./resources/images/roadmap-future.png[]
 
 [.notes]
 --
@@ -174,63 +141,150 @@ image::./resources/images/roadmap-future.png[]
 --
 
 
-=== Current State
-
-image::resources/images/silos.png[]
-
-[%step]
-* limiting reporting
-* prone to duplication across *LOB*
-* differing business processes: 
-** increases training requirements
-** increases the operations performed across *LOB*
-* redundant maintenance procedures
-
-=== Current State
-
-[%step]
-* Knowledge Management
-* SLA
-* Portals
-** Chatbots, Self-service, AI
-
-[.columns]
-=== Desired State
-
-[.column]
-[%step]
-* Business Units
-* Security Model
-** Teams
-** Users
-** Role based
-
-[.column]
-[%step]
-* Contacts
-* Accounts
-* Cases
-** Business Process Flows
-** Automated case creation
-* Actvities
-** Emails, Phone calls, Tasks
+== Main Branches
 
 
-[.column]
-[%step]
-* Portals
-* Queues, automated routing
-* SLA
-* Entitlements
-* Knowledge Management
+[cols="65%a,2%,33%a",frame="none",grid="none"]
+|===
+|||
+
+|
+* The proposed workflow is centered on two branches, _develop_ and _master_, that have infinite lifespans. 
+* The *origin/master* branches *HEAD* always points to the production-ready state. 
+* The *origin/develop* branch is where the next release is being worked on.
+* Developers working on the next release will merge in their changes on the origin/develop branch. 
+* Nightly builds are based on this branch. 
+* Production releases are merged in from develop onto master. 
 
 
+||
+[#img-main-branches]
+.Main Branches
+image::resources/images/main-branches.png[git,550,400,align='center']
 
-=== Gap Analysis
-
-=== Activities
+|===
 
 
-=== Prioritize Sequence
+[.notes]
+--
+
+--
+
+== Working Branches
+
+* The day to day workflows are centered on the typical activities involving; adding features, creating releases and applying hotfixes. 
+* *Features*
+** A local _feature_ branch is created, based on the local develop branch, and changes merged back into develop. The updates are pushed to the tracked *origin/develop* branch.
+* *Releases*
+** A local _release_ branch is created, based on the local develop branch, and changes merged back into develop. The updates are pushed to the tracked *origin/develop* and *origin/master* branches.
+* *Hotfixes*
+* A local release branch is created, based on the local master branch, and changes merged back into master.  The updates are pushed to the tracked *origin/develop* and *origin/master* branches.
 
 
+[.notes]
+--
+
+--
+
+
+== D365 Workflow
+
+[.text-left]
+The first thing to do is to _clone_ the repository. Creates a local copy of the repository from the origin.
+
+
+[source,bash,linenums,highlight=1;2,options="nowrap"]
+----
+cd ~\sources\repos <1>
+git clone URL <2>
+----
+
+D365 Customizations
+
+* Typically we customize using the D365 user interface, i.e. solution window, where we use the forms editor, entity dialogs, workflow editor etc.
+** That does _not_ change
+* Exporting the customizations, i.e. the solution, and adding it to the repository will not work.
+** It is not _specific_ enough. We want just the customizations that were made checked in. Example, the changes for a user story, form update, new entity field, etc.
+
+[.notes]
+--
+
+--
+
+== D365 Workflow
+
+* D365 does _not_ provide out of the box support for team development.
+* D365 _does_ provide tools, via the *SDK*, to support the team development model however.
+** Solution Packager
+*** Can pack and unpack solution files organized by component types.
+*** The customizations can be identified down to the component level.
+**** These are just XML files
+
+
+[.notes]
+--
+
+--
+
+== Developer Process
+
+* Each developer creates a feature branch based on *origin/develop* that they checkout.
+** The developer now has the latest copy of the _unpacked_ solution files from the *origin/develop* branch.
+* The developer works on the feature or bug fix, as usual.
+** The solution is exported and unpacked. Changes are detected by git.
+* When ready to push changes, the developer first fetches any changes from origin. Another developer may have pushed changes since the last checkout.
+** It is possible there may be a _merge_ conflict. That occurs when git cannot merge conflicting changes. The developers, those working on the same component, may need to cooperate on the specifics of the change and manually clear the merge conflict.
+
+
+[.notes]
+--
+
+--
+
+== Developer Process
+
+* The developer issues a pull request.
+** The pull request is reviewed and approved or rejected.
+*** If approved, the origin/develop branch is merged with the changes.
+*** If rejected, the developer continues with the work implementing the recommended changes.
+* The developer works on the next user story.
+* The day to day development working process on D365 is not impacted.
+
+
+[.notes]
+--
+
+--
+
+
+== Feature Branch
+
+
+[cols="75%a,2%,23%a",frame="none",grid="none"]
+|===
+|||
+
+|
+* Create and checkout a feature branch based on the *origin/develop* branch.
+* Work on the feature and once complete, sync with the *origin/develop* branch to get the latest changes.
+** Other developers may of committed changes during this time.
+* Export and unpack the solution files.
+** *git status* to see what changed.
+** *git add* to stage the changes.
+** *git commit –m “Message describing the change”* to locally commit the changes.
+** Issue a *Pull Request*
+
+||
+[#img-feature-branches]
+.Feature Branch
+image::resources/images/feature-branch.png[git,200,400,align='center']
+
+|===
+
+
+[.notes]
+--
+
+--
+
+== Pull Request

@@ -11,13 +11,13 @@ role:
 header:
   background-color: 0
   font_color: FFFFFF
-  height: 0.35in
+  height: 0.05in
   recto:
     columns: "<40% =20% >40%"
     right:
       content: '_{organization}_'
     center:
-      content: image:../images/cbsa.png[pdfwidth=0.5in]
+      content: image:../images/dxc_logo.png[pdfwidth=0.5in]
   verso:
     columns: $header_recto_columns
     left:
@@ -27,7 +27,7 @@ header:
 footer:
   background-color: 0
   font_color: FFFFFF
-  height: 0.35in
+  height: 0.05in
   recto:
     right:
       content: '{section-or-chapter-title} | {page-number}'
@@ -41,4 +41,4 @@ title-page:
     font-color: #999999    
   logo:
     align: left
-    image: image:../images/cbsa.png[pdfwidth=25%]
+    image: image:../images/dxc_logo.png[pdfwidth=25%]
