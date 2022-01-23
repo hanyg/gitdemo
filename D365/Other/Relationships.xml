@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityRelationships xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <EntityRelationship Name="business_unit_dxc_git" />
+  <EntityRelationship Name="lk_dxc_git_createdby" />
+  <EntityRelationship Name="lk_dxc_git_modifiedby" />
+  <EntityRelationship Name="owner_dxc_git" />
+  <EntityRelationship Name="team_dxc_git" />
+  <EntityRelationship Name="user_dxc_git" />
+</EntityRelationships>
