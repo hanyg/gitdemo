@@ -1,1 +1,2 @@
 git demo
+asciidoctor-pdf -a pdf-themesdir=resources/themes -a pdf-theme=custom  -r asciidoctor-lists  git\ overview.adoc
