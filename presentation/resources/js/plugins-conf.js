@@ -1,3 +1,5 @@
+width: "100%",
+height: "100%",
 menu: {
     themes: [
          { name: 'Black', theme: 'reveal.js/css/theme/black.css' },
@@ -12,8 +14,8 @@ menu: {
 	numbers: true,
 	width: 'half',
 	custom: [
-			{ title: 'DOJ Extract HTML', icon: '<i class="fa fa-link"></i>', src: 'toc.html' },
-			{ title: 'DOJ Extract PDF', icon: '<i class="fa fa-info"></i>', src: 'about.html' }
+			{ title: 'Agenda', icon: '<i class="fa fa-link"></i>', src: 'agenda.html' },
+			{ title: 'Documentation', icon: '<i class="fa fa-info"></i>', src: 'about.html' }
 	]
 },
 keyboard: {
@@ -28,27 +30,6 @@ chalkboard: {
 	theme: "chalkboard",
 	toggleChalkboardButton: { left: "70px" },
 	toggleNotesButton: { left: "110px" },
-//	background: [ 'rgba(127,127,127,.1)' , 'resources/images/blackboard.png' ],
-//	grid: { color: 'rgb(50,50,10,0.5)', distance: 80, width: 2},
-//    eraser: { src: 'resources/images/sponge.png', radius: 20},
-//	boardmarkers : [
-//			{ color: 'rgba(100,100,100,1)', cursor: 'url(resources/images/boardmarker-black.png), auto'},
-//			{ color: 'rgba(30,144,255, 1)', cursor: 'url(resources/images/boardmarker-blue.png), auto'},
-//			{ color: 'rgba(220,20,60,1)', cursor: 'url(resources/images/boardmarker-red.png), auto'},
-//			{ color: 'rgba(50,205,50,1)', cursor: 'url(resources/images/boardmarker-green.png), auto'},
-//			{ color: 'rgba(255,140,0,1)', cursor: 'url(resources/images/boardmarker-orange.png), auto'},
-//			{ color: 'rgba(150,0,20150,1)', cursor: 'url(resources/images/boardmarker-purple.png), auto'},
-//			{ color: 'rgba(255,220,0,1)', cursor: 'url(resources/images/boardmarker-yellow.png), auto'}
-//	],
-//	chalks: [
-//			{ color: 'rgba(255,255,255,0.5)', cursor: 'url(resources/images/chalk-white.png), auto'},
-//			{ color: 'rgba(96, 154, 244, 0.5)', cursor: 'url(resources/images/chalk-blue.png), auto'},
-//			{ color: 'rgba(237, 20, 28, 0.5)', cursor: 'url(resources/images/chalk-red.png), auto'},
-//			{ color: 'rgba(20, 237, 28, 0.5)', cursor: 'url(resources/images/chalk-green.png), auto'},
-//			{ color: 'rgba(220, 133, 41, 0.5)', cursor: 'url(resources/images/chalk-orange.png), auto'},
-//			{ color: 'rgba(220,0,220,0.5)', cursor: 'url(resources/images/chalk-purple.png), auto'},
-//			{ color: 'rgba(255,220,0,0.5)', cursor: 'url(resources/images/chalk-yellow.png), auto'}
-//	]
 },
 customcontrols: {
 		slideNumberCSS : 'position: fixed; display: block; right: 90px; top: auto; left: auto; width: 50px; bottom: 30px; z-index: 31; font-family: Helvetica, sans-serif; font-size:  12px; line-height: 1; padding: 5px; text-align: center; border-radius: 10px; background-color: rgba(128,128,128,.5)',
