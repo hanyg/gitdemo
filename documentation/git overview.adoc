@@ -15,7 +15,15 @@
 :data-uri:
 :orgname: DXC
 :blank: {empty} +
+
+:url-git-workflow: https://nvie.com/posts/a-successful-git-branching-model/
 :url-github-flow: https://docs.github.com/en/get-started/quickstart/github-flow
+:url-git: https://git-scm.com/
+:url-pro-git: https://git-scm.com/book
+:url-git-cheat-sheet: https://about.gitlab.com/images/press/git-cheat-sheet.pdf
+:url-xrmtoolbox: https://www.xrmtoolbox.com/
+:url-xrmtoolbox-albanian: https://www.xrmtoolbox.com/plugins/AlbanianXrm.SolutionPackager/
+
 
 
 <<<
@@ -193,6 +201,8 @@ git push origin/develop <5>
 <4> Do not just push changes because changes may have been checked in that we do not have yet. Check for merge conflict and fix any conflicts before proceeding
 <5> We would actually issue a _Pull Request_ but we haven't covered that yet!
 
+<<<
+
 === Hotfixes
 
 Applying a hotfix is similar to the normal feature/topic branch workflow previously described. The main difference is that because it is urgent to update the production release, the hotfix is branched off of origin/master. Work on the hotfix branch continues as usual and the changes are merged into the master and develop branches. The remote server is updated as usual. 
@@ -204,3 +214,14 @@ Once the develop branch as reached the point where a release is ready, we create
 === GitHub Flow
 
 GitHub flow is a lightweight, branch-based workflow. The *GitHub flow* is useful for everyone, not just developers. {url-github-flow}[GitHub Flow] 
+
+== Resources
+
+You can get *git* from the main site {url-git}[git]. A really useful resource is the online {url-pro-git}[Pro git Book].
+
+Another helpful resource is the {url-git-cheat-sheet}[git Cheat Sheet]
+
+The workflow and concepts desribed in this document are based on the blog {url-git-workflow}[A successful Git branching model]. Although more that ten years old, but recently updated, the core concepts remain tried and true. A worthwhile read!
+
+The {url-xrmtoolbox}[XrmToolbox] is an indispendible tool. The {url-xrmtoolbox-albanian}[Albanian Solution Packager] simplifies the 
+solution packing and unpacking operations described in the document.
