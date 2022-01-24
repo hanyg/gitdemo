@@ -185,7 +185,7 @@ A developer would typically work on one feature which will get merged into the w
 *git* best practices recommend to commit changes often and to work on one feature at a time. If several unrelated changes are committed together, rolling back changes where part of the commit is still required and the buggy portion should be removed becomes problematic. The changes made on CRM are merged onto the local develop branch by first exporting the solution containing the changes and the extracting the solution over the working copy using the extract action of solution packager.
 
 .Extract the Solution
-[source,bash,linenums,highlight=1-6,options="nowrap"]
+[source,bash,linenums,highlight=1-4;6,options="nowrap"]
 ----
 SolutionPackager.exe /action:extract /zipfile:mySolution.zip <1>
 git status <2>
@@ -225,3 +225,64 @@ The workflow and concepts desribed in this document are based on the blog {url-g
 
 The {url-xrmtoolbox}[XrmToolbox] is an indispendible tool. The {url-xrmtoolbox-albanian}[Albanian Solution Packager] simplifies the 
 solution packing and unpacking operations described in the document.
+
+=== Dynamics 365 Tools
+
+The following _powershell_ script will download the rquired tools and more from *NuGet*.
+
+.Clone the Repo
+[source,powershell,linenums,highlight=1;3;10;19;28;37,options="nowrap"]
+----
+$sourceNugetExe = "https://dist.nuget.org/win-x86-commandline/latest/nuget.exe" <1>
+$targetNugetExe = ".\nuget.exe"
+Remove-Item .\Tools -Force -Recurse -ErrorAction Ignore <2>
+Invoke-WebRequest $sourceNugetExe -OutFile $targetNugetExe
+Set-Alias nuget $targetNugetExe -Scope Global -Verbose
+
+##
+##Download Plugin Registration Tool
+##
+./nuget install Microsoft.CrmSdk.XrmTooling.PluginRegistrationTool -O .\Tools <3>
+md .\Tools\PluginRegistration
+$prtFolder = Get-ChildItem ./Tools | Where-Object {$_.Name -match 'Microsoft.CrmSdk.XrmTooling.PluginRegistrationTool.'}
+move .\Tools\$prtFolder\tools\*.* .\Tools\PluginRegistration
+Remove-Item .\Tools\$prtFolder -Force -Recurse
+
+##
+##Download CoreTools
+##
+./nuget install Microsoft.CrmSdk.CoreTools -O .\Tools <4>
+md .\Tools\CoreTools
+$coreToolsFolder = Get-ChildItem ./Tools | Where-Object {$_.Name -match 'Microsoft.CrmSdk.CoreTools.'}
+move .\Tools\$coreToolsFolder\content\bin\coretools\*.* .\Tools\CoreTools
+Remove-Item .\Tools\$coreToolsFolder -Force -Recurse
+
+##
+##Download Configuration Migration
+##
+./nuget install Microsoft.CrmSdk.XrmTooling.ConfigurationMigration.Wpf -O .\Tools <5>
+md .\Tools\ConfigurationMigration
+$configMigFolder = Get-ChildItem ./Tools | Where-Object {$_.Name -match 'Microsoft.CrmSdk.XrmTooling.ConfigurationMigration.Wpf.'}
+move .\Tools\$configMigFolder\tools\*.* .\Tools\ConfigurationMigration
+Remove-Item .\Tools\$configMigFolder -Force -Recurse
+
+##
+##Download Package Deployer 
+##
+./nuget install Microsoft.CrmSdk.XrmTooling.PackageDeployment.WPF -O .\Tools <6>
+md .\Tools\PackageDeployment
+$pdFolder = Get-ChildItem ./Tools | Where-Object {$_.Name -match 'Microsoft.CrmSdk.XrmTooling.PackageDeployment.Wpf.'}
+move .\Tools\$pdFolder\tools\*.* .\Tools\PackageDeployment
+Remove-Item .\Tools\$pdFolder -Force -Recurse
+
+##
+##Remove NuGet.exe
+##
+Remove-Item nuget.exe
+----
+<1> The _nuget_ command that will be used to fetch the required tools
+<2> Cleanup previous downloads
+<3> Plugin Registration Tool
+<4> Core Tools. Includes the required _SolutionPackager_ tool decsribed in this document.
+<5> Configuration Data Migration Tool
+<6> Package Deployment Tool
