@@ -1,2 +1,13 @@
-git demo
-asciidoctor-pdf -a pdf-themesdir=resources/themes -a pdf-theme=custom  -r asciidoctor-lists  git\ overview.adoc
+# git demo
+
+Documentation and presentation describing git, a git workflow and how to 
+use git with Dynamics 365.
+
+- Generate the *PDF* document
+   -  _asciidoctor-pdf -a pdf-themesdir=resources/themes -a pdf-theme=custom  -r asciidoctor-lists  $File_
+- Generate the presentation *HTML* files
+   -  _bundle exec asciidoctor-revealjs -a revealjsdir=https://cdn.jsdelivr.net/npm/reveal.js@3.9.2  $File_
+   - _sudo ruby -run -e httpd . -p 5000 -b 127.0.0.1_
+       - _sudo_ is only required on Unix-like systems
+
+
