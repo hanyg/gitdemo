@@ -203,15 +203,67 @@ git push origin/develop <5>
 
 <<<
 
+== Tags
+
+*Tags* lets us mark points in the repositories history typically used to mark release points. There are two types of tags available:  
+
+* _Lightweight_
+** Just a pointer to a specific commit
+* _Annotated_
+** Full-fledged *git* object that contains detailed information on the tag: 
+*** Taggers name
+*** Taggers email
+*** Tag date
+*** Tag message
+
+Since annotated tags provide all of this information, it is almost always preferrable over lightweight tags. Here are a few examples: 
+
+.git tag commands
+[source,bash,linenums,highlight=1;5;7;12,options="nowrap"]
+----
+$ git tag <1>
+1.0
+1.1
+
+$ git tag -a 1.2 -m "added git tag commands to documentation" <2>
+
+$ git tag <3>
+1.0
+1.1
+1.2
+
+$ git push origin 1.2 <4>
+Enumerating objects: 1, done.
+Counting objects: 100% (1/1), done.
+Writing objects: 100% (1/1), 176 bytes | 88.00 KiB/s, done.
+Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/hanyg/gitdemo.git
+ * [new tag]         1.2 -> 1.2
+
+----
+<1> List tags on this branch
+<2> create a tag
+<3> list the new tag just added
+<4> push the tags to the remote
+
+
+
+
+<<<
+
 === Hotfixes
 
 Applying a hotfix is similar to the normal feature/topic branch workflow previously described. The main difference is that because it is urgent to update the production release, the hotfix is branched off of origin/master. Work on the hotfix branch continues as usual and the changes are merged into the master and develop branches. The remote server is updated as usual. 
+
+Use a tag to mark the hotfix.
 
 === Releases
 
 Once the develop branch as reached the point where a release is ready, we create a release branch. All the final bits and pieces of the release can be applied at this point. The release branch is created off the develop branch and once completed, merged into master and develop. The remote server is updated as usual.
 
-=== GitHub Flow
+Use a tag to mark the release.
+
+== GitHub Flow
 
 GitHub flow is a lightweight, branch-based workflow. The *GitHub flow* is useful for everyone, not just developers. {url-github-flow}[GitHub Flow] 
 
