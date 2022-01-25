@@ -203,6 +203,35 @@ git push origin/develop <5>
 
 <<<
 
+== Tags
+
+*Tags* lets us mark points in the repositories history typically used to mark release points. There are two types of tags available:  
+
+* _Lightweight_
+** Just a pointer to a specific commit
+* _Annotated_
+** Full-fledged *git* object that contains detailed information on the tag: 
+*** Taggers name
+*** Taggers email
+*** Tag date
+*** Tag message
+
+Since annotated tags provide all of this information, it is almost always preferrable over lightweight tags. Here are a few examples: 
+
+.git tag commands
+[source,bash,linenums,highlight=1,options="nowrap"]
+----
+$ git tag <1>
+1.0
+1.1
+
+----
+<1> List tags on this branch
+
+
+
+<<<
+
 === Hotfixes
 
 Applying a hotfix is similar to the normal feature/topic branch workflow previously described. The main difference is that because it is urgent to update the production release, the hotfix is branched off of origin/master. Work on the hotfix branch continues as usual and the changes are merged into the master and develop branches. The remote server is updated as usual. 
