@@ -11,9 +11,10 @@
 :revealjs_controlsLayout: bottom-right
 :revealjs_transition: slide
 :revealjs_parallaxBackgroundImage: http://localhost:5000/resources/images/bg.png
+:revealjs_theme: league
 :Author:    Hany Greiss <Hany.Greiss@dxc.com>
 :Email:     Hany.Greiss@dxc.com
-:revdate:   01/24/2022
+:revdate:   01/26/2022
 :revnumber: 1.0
 :revremark: DRAFT
 :revealjsdir: ./reveal.js
@@ -63,10 +64,36 @@ _Detailed Overview_
 
 
 
-
+[.columns]
 == Agenda
 
+[.text-left]
+[.column]
 * git Overview
+** What is git? 
+** What makes it different?
+** When should I use it?
+* git Workflow
+** _A process to successfully using git_
+** Individually and with Teams
+* Main Branches
+* Working Branches
+
+[.column]
+* D365 Workflow
+** _A process to using git on a D365 project_
+** D365 Tools
+* Feature Branches
+** Break down the work
+** Within an Agile style project
+* Pull Requests
+** Peer reviews
+
+[.column]
+* Demonstration
+** Throughout the presentation
+* Questions
+** Anytime!
 
 [.notes]
 --
@@ -292,3 +319,20 @@ image::resources/images/feature-branch.png[git,200,400,align='center']
 * Pull requests are used to control updates to the main branches.
 * The developer should never directly push to the *origin/develop* or *origin/master* branches.
 * The developer creates a *Pull Request* that can be reviewed and *Approved* or *Rejected*
+
+== Tags
+
+* git provides a mechaism to identify important commits
+** End of sprint
+** Realease
+** Hotfix
+* Use tags!
+** Lightweight
+** Annotated
+* Use Annotated tags since more information is available with the tag
+* Tags must be pushed to the remote
+* Tags are often just added at the remote and pulled
+
+
+== Questions
+
